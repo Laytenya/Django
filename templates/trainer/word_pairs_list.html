@@ -1,0 +1,15 @@
+{% extends 'trainer/base.html' %}
+{% block title %}Word Pairs List{% endblock %}
+
+{% block content %}
+    <h1>Word Pairs</h1>
+    {% if word_pairs %}
+        <ul>
+            {% for word_pair in word_pairs %}
+                <li>{{ word_pair.english_word }} - {{ word_pair.russian_word }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No word pairs added yet.</p>
+    {% endif %}
+{% endblock %}
