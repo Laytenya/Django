@@ -1,0 +1,15 @@
+{% extends 'trainer/base.html' %}
+{% block title %}Practice{% endblock %}
+
+{% block content %}
+    <h1>Practice</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% elif word_pair %}
+        <p>Translate the following word:</p>
+        <h2>{{ word_pair.english_word }}</h2>
+        <a href="{% url 'check_translation' word_pair.id %}" class="btn btn-primary">Translate</a>
+    {% else %}
+        <p>No word pairs available for practice.</p>
+    {% endif %}
+{% endblock %}
