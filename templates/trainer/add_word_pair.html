@@ -1,0 +1,11 @@
+{% extends 'trainer/base.html' %}
+{% block title %}Add Word Pair{% endblock %}
+
+{% block content %}
+    <h1>Add a Word Pair</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Add Word Pair</button>
+    </form>
+{% endblock %}
