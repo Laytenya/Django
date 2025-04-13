@@ -1,0 +1,12 @@
+{% extends 'trainer/base.html' %}
+{% block title %}Translation{% endblock %}
+
+{% block content %}
+    <h1>Translate: {{ word_pair.english_word }}</h1>
+    <form method="post" action="{% url 'check_translation' word_pair.id %}">
+        {% csrf_token %}
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Check Translation</button>
+    </form>
+{% endblock %}
